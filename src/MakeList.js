@@ -18,7 +18,7 @@ export default function MakeList() {
 
   const handleKeypress = e => {
     if (e.keyCode === 13) {
-      dispatch(addItem(input))
+      handleSubmit();
     }
   }
 
@@ -30,7 +30,7 @@ export default function MakeList() {
           placeholder="Add item" 
           value={input} 
           onChange={handleChange}
-          onKeyPress={handleKeypress}
+          onKeyDown={handleKeypress}
         />
         <button className="add-button" onClick={handleSubmit}>
           Add
