@@ -20,7 +20,7 @@ input:focus {
   transition: 0.5s;
 }
 .add-button:hover {
-  background-color: #95e3c8;
+  background-color: #aae9d3;
 }
 .add-button:active {
   background-color: #e4e2e3;

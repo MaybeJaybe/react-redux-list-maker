@@ -30,7 +30,9 @@ export default function List() {
             <span className='checkmark'></span>
             {item.value}
           </label>
-          <button className='remove-button' key={index} onClick={() => deleteItem(index)}>Remove</button>
+          <div className="button-container">
+            <button className='remove-button' key={index} onClick={() => deleteItem(index)}>Remove</button>
+          </div>
         </div>
       </div>
     )

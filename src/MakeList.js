@@ -7,10 +7,20 @@ export default function MakeList() {
   const dispatch = useDispatch();
   const [input, setInput] = useState('');
 
+  const handleChange = e => {
+    return setInput(e.target.value);
+  };
+
   const handleSubmit = () => {
     dispatch(addItem(input));
     setInput('');
   };
+
+  const handleKeypress = e => {
+    if (e.keyCode === 13) {
+      dispatch(addItem(input))
+    }
+  }
 
   return (
     <div className="make-container">
@@ -19,7 +29,8 @@ export default function MakeList() {
           className="make-input"
           placeholder="Add item" 
           value={input} 
-          onChange={(e) => setInput(e.target.value)}
+          onChange={handleChange}
+          onKeyPress={handleKeypress}
         />
         <button className="add-button" onClick={handleSubmit}>
           Add
